@@ -123,7 +123,7 @@
   }
   .cs-text {
     font-size: var(--bodyFontSize);
-    line-height: 1.5em;
+    line-height: 1.6em;
     text-align: inherit;
     width: 100%;
     max-width: 40.625rem;
@@ -147,15 +147,14 @@
     display: inline-block;
     position: relative;
     z-index: 1;
-    /* prevents padding from adding to the width */
     box-sizing: border-box;
     border-radius: 4rem;
-    transition: transform 200ms ease-in-out;
+    transition: transform 200ms;
   }
   /* Button hover for devices that have true hover only */
   @media (hover: hover), (-ms-high-contrast: none) {
     .cs-button-solid:hover {
-      transform: scale(0.95);
+      transform: scale(0.96);
     }
   }
 
@@ -501,257 +500,139 @@
 }
 
 /*-- -------------------------- -->
-<---          Banner            -->
+<---          Footer            -->
 <--- -------------------------- -*/
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #banner-712 {
-    /* 175px - 200px top */
-    padding: clamp(10.9375rem, 10vw, 12.5rem) 1rem 6.25rem;
+  #footer-1391 {
+    background-color: var(--backgroundColor);
+    padding: var(--sectionPadding);
     position: relative;
     z-index: 1;
   }
-  #banner-712 .cs-container {
-    text-align: center;
+  #footer-1391 .cs-container {
     width: 100%;
-    max-width: 80rem;
+    /* max-width: 80rem; */
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #footer-1391 .cs-top {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    /* 24px - 64px */
+    padding-bottom: clamp(1.5rem, 5vw, 4rem);
+    border-bottom: 1px solid var(--lightGrey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* 24px - 40px */
+    gap: clamp(1.25rem, 4vw, 2.5rem);
+  }
+  #footer-1391 .cs-ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+    column-gap: clamp(1.5rem, 4vw, 2.25rem);
+  }
+  #footer-1391 .cs-li {
+    list-style: none;
+  }
+  #footer-1391 .cs-link {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5em;
+    text-decoration: none;
+    margin: 0;
+    color: var(--bodyTextColor);
+    display: block;
+    transition: color 0.3s;
+  }
+
+  #footer-1391 .cs-logo {
+    width: 100%;
+    max-width: 6rem;
+    height: auto;
+    display: block;
+  }
+  #footer-1391 .cs-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  #footer-1391 .cs-bottom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+  #footer-1391 .cs-social {
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
-  #banner-712 .cs-int-title {
-    /* 39px - 61px */
-    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-    font-weight: 900;
-    line-height: 1.2em;
-    text-align: inherit;
-    margin: 0;
-    color: var(--bodyTextColorWhite);
-    position: relative;
-  }
-  #banner-712 .cs-background {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
-  #banner-712 .cs-background:before {
-    /* background color overlay */
-    content: "";
-    position: absolute;
-    display: block;
-    height: 100%;
-    width: 100%;
-    background: #000;
-    opacity: 0.75;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  #banner-712 .cs-background img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* Makes img tag act as a background image */
-    object-fit: cover;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #banner-712 .cs-background:before {
-    opacity: 1;
-    background: linear-gradient(
-      90.01deg,
-      rgba(0, 0, 0, 0.9) 16.86%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-}
-/*-- -------------------------- -->
-<---          Footer            -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #cs-footer-269 {
-    /* 60px - 100px top and bottom */
-    padding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
-    background-color: #1a1a1a;
-    /* Navigation Links */
-    /* Contact Links */
-  }
-  #cs-footer-269 .cs-container {
-    width: 100%;
-    /* reset on tablet */
-    max-width: 34.375rem;
-    margin: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    /* 68px - 100px */
-    column-gap: clamp(4.25rem, calc(10%), 6.25rem);
-  }
-  #cs-footer-269 .cs-logo-group {
-    /* takes up all the space, lets the other ul's wrap below it */
-    width: 100%;
-    position: relative;
-  }
-  #cs-footer-269 .cs-logo {
-    /* 210px - 240px */
-    width: clamp(13.125rem, 8vw, 15rem);
-    height: auto;
-    display: block;
-    /* 28px - 44px */
-    margin-bottom: clamp(1.75rem, 4.17vw, 2.75rem);
-  }
-  #cs-footer-269 .cs-logo-img {
-    width: 100%;
-    height: auto;
-  }
-  #cs-footer-269 .cs-text {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 2.5vw, 1rem);
-    line-height: 1.5em;
-    margin: 0;
-    margin-bottom: 2rem;
-    /* changes to 305px at desktop */
-    max-width: 33.75rem;
-    color: var(--bodyTextColorWhite);
-  }
-  #cs-footer-269 .cs-nav {
-    padding: 0;
-    margin: 0;
-  }
-  #cs-footer-269 .cs-nav-li {
+  #footer-1391 .cs-social-li {
     list-style: none;
-    line-height: 1.5em;
-    margin-bottom: 0.5rem;
   }
-  #cs-footer-269 .cs-nav-li:last-of-type {
-    margin-bottom: 0;
-  }
-  #cs-footer-269 .cs-header {
-    font-size: 1rem;
-    line-height: 1.5em;
-    font-weight: 700;
-    margin-bottom: 0.875rem;
-    color: var(--bodyTextColorWhite);
-    position: relative;
-    display: block;
-  }
-  #cs-footer-269 .cs-nav-link {
-    font-size: 1rem;
-    text-decoration: none;
-    line-height: 1.5em;
-    color: var(--bodyTextColorWhite);
-    position: relative;
-  }
-  #cs-footer-269 .cs-nav-link:before {
-    /* underline */
-    content: "";
-    width: 0%;
-    height: 0.125rem;
-    /* current color of the parent */
-    background: currentColor;
-    opacity: 1;
-    position: absolute;
-    display: block;
-    bottom: -0.125rem;
-    left: 0;
-    transition: width 0.3s;
-  }
-  #cs-footer-269 .cs-nav-link:hover:before {
-    width: 100%;
-  }
-  #cs-footer-269 .cs-contact {
-    margin: 0;
-    padding: 0;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-  }
-  #cs-footer-269 .cs-contact-li {
-    list-style: none;
-    margin-bottom: 0rem;
-  }
-  #cs-footer-269 .cs-contact-li:last-of-type {
-    margin-bottom: 0;
-  }
-  #cs-footer-269 .cs-contact-link {
-    font-size: 1rem;
-    text-decoration: none;
-    line-height: 1.5em;
-    text-align: left;
-    color: var(--bodyTextColorWhite);
-    display: inline-block;
-  }
-  #cs-footer-269 .cs-contact-link:hover {
-    text-decoration: underline;
-  }
-  #cs-footer-269 .cs-address {
-    font-size: 1rem;
-    margin-bottom: 1.25rem;
-  }
-  #cs-footer-269 .cs-social-group {
-    /* pushes away from the other flex items */
-    margin-top: auto;
-    margin-left: auto;
-  }
-  #cs-footer-269 .cs-social {
-    display: inline-flex;
-    justify-content: flex-start;
-    gap: 0.75rem;
-  }
-  #cs-footer-269 .cs-social-link {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #4e4b66;
+  #footer-1391 .cs-social-link {
+    width: 4rem;
+    height: 4rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: background-color 0.3s;
   }
-  #cs-footer-269 .cs-social-link:hover {
-    background-color: var(--primary);
-    transform: translateY(-0.1875rem);
-  }
-  #cs-footer-269 .cs-social-img {
-    height: 0.8125rem;
-    width: auto;
+
+  #footer-1391 .cs-social-icon {
+    height: auto;
     display: block;
+    transition: transform 300ms;
+  }
+  #footer-1391 .cs-social-icon:hover {
+    transform: scale(0.95);
+  }
+
+  #footer-1391 .cs-copyright {
+    font-size: 1rem;
+    color: var(--bodyTextColor);
+    line-height: 1.6em;
+    margin: 0;
+    display: block;
+  }
+  #footer-1391 .cs-copyright-link,
+  #footer-1391 .cs-separater {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--bodyTextColor);
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #cs-footer-269 .cs-container {
-    max-width: 80rem;
-    row-gap: 0;
+  #footer-1391 .cs-top {
+    align-items: flex-start;
   }
-  #cs-footer-269 .cs-logo-group {
-    width: auto;
-    /* pushes everything to the right of it as far as possible in a flexbox */
-    margin-right: auto;
+  #footer-1391 .cs-bottom {
+    flex-direction: row;
+    justify-content: space-between;
   }
-  #cs-footer-269 .cs-text {
-    width: 80%;
-    max-width: 19.0625rem;
-    margin: 0;
+  #footer-1391 .cs-flex {
+    margin: 0 auto;
   }
-  #cs-footer-269 .cs-nav,
-  #cs-footer-269 .cs-contact {
-    /* 8px - 12px */
-    margin-top: clamp(0.5rem, 1.2vw, 0.75rem);
+  #footer-1391 .cs-social {
+    /* sends it to the right in the 3rd position */
+    order: 3;
   }
 }
