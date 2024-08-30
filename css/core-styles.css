@@ -4,13 +4,12 @@
 /* Mobile */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #853A3A;
-    --primaryLight: #001F3F;
-    --secondary: #E4A95F;
-    --secondaryLight: #FFBA43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4E4B66;
-    --bodyTextColorWhite: #FAFBFC;
+    --primary: #d6de23;
+    --secondary: #133d3f;
+    --headerColor: #161613;
+    --bodyTextColor: #37372f;
+    --bodyTextColorWhite: #fefefe;
+    --backgroundColor: #fbfbef;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -19,39 +18,45 @@
     /* 60px - 100px top and bottom */
     --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
   }
-  /* roboto-regular - latin */
+  /* open-sans-regular - latin */
   @font-face {
-    font-family: 'Roboto';
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 400;
-    src: local(''), url('/assets/fonts/roboto-v29-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/assets/fonts/roboto-v29-latin-regular.woff') format('woff');
-    
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url("../assets/fonts/open-sans-v40-latin-regular.woff2")
+      format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* roboto-700 - latin */
+  /* open-sans-600 - latin */
   @font-face {
-    font-family: 'Roboto';
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../assets/fonts/open-sans-v40-latin-500.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+  /* open-sans-700 - latin */
+  @font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Open Sans";
     font-style: normal;
     font-weight: 700;
-    src: local(''), url('/assets/fonts/roboto-v29-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/assets/fonts/roboto-v29-latin-700.woff') format('woff');
-    
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    src: url("../assets/fonts/open-sans-v40-latin-700.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
-  /* roboto-900 - latin */
+  /* open-sans-800 - latin */
   @font-face {
-    font-family: 'Roboto';
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: "Open Sans";
     font-style: normal;
-    font-weight: 900;
-    src: local(''), url('/assets/fonts/roboto-v29-latin-900.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */ url('/assets/fonts/roboto-v29-latin-900.woff') format('woff');
-    
-    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    font-weight: 800;
+    src: url("../assets/fonts/open-sans-v40-latin-800.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
   }
   body,
   html {
     margin: 0;
     padding: 0;
     font-size: 100%;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: "Open Sans", Arial, sans-serif;
     color: var(--bodyTextColor);
     overflow-x: hidden;
   }
@@ -99,18 +104,15 @@
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: inherit;
-    letter-spacing: .1em;
+    letter-spacing: 0.1em;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--bodyTextColor);
     margin-bottom: 0.25rem;
     display: block;
   }
-  body.dark-mode .cs-topper {
-    color: var(--secondary);
-  }
   .cs-title {
     font-size: var(--headerFontSize);
-    font-weight: 900;
+    font-weight: 800;
     line-height: 1.2em;
     text-align: inherit;
     max-width: 43.75rem;
@@ -127,15 +129,17 @@
     margin: 0;
     color: var(--bodyTextColor);
   }
+  /* Primary button */
   .cs-button-solid {
     font-size: 1rem;
     /* 46px - 56px */
     line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-transform: uppercase;
     text-decoration: none;
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #fff;
+    color: var(--headerColor);
     min-width: 9.375rem;
     padding: 0 1.5rem;
     background-color: var(--primary);
@@ -144,22 +148,16 @@
     z-index: 1;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
+    border-radius: 4rem;
+    transition: transform 200ms ease-in-out;
   }
-  .cs-button-solid:before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width .3s;
+  /* Button hover for devices that have true hover only */
+  @media (hover: hover), (-ms-high-contrast: none) {
+    .cs-button-solid:hover {
+      transform: scale(0.95);
+    }
   }
-  .cs-button-solid:hover:before {
-    width: 100%;
-  }
+
   .skip {
     position: absolute;
     top: 0;
@@ -168,67 +166,7 @@
     z-index: -1111111;
   }
 }
-/*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-/* Mobile */
-@media only screen and (min-width: 0em) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  body.dark-mode #dark-mode-toggle .cs-moon {
-    transform: translate(-50%, -150%);
-    opacity: 0;
-    fill: #fff;
-  }
-  #dark-mode-toggle {
-    display: block;
-    position: absolute;
-    top: 0.625rem;
-    right: 4.375rem;
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-    z-index: 1000;
-  }
-  #dark-mode-toggle img,
-  #dark-mode-toggle svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1.25rem;
-    height: 1.25rem;
-    pointer-events: none;
-  }
-  #dark-mode-toggle .cs-moon {
-    z-index: 2;
-    transition: transform .3s, opacity .3s;
-  }
-  #dark-mode-toggle .cs-sun {
-    z-index: 1;
-    transform: translate(-50%, 100%);
-    opacity: 0;
-    transition: transform .3s, opacity .3s;
-  }
-}
-/* Desktop */
-@media only screen and (min-width: 64em) {
-  #dark-mode-toggle {
-    position: relative;
-    transform: none;
-    top: auto;
-    right: auto;
-    margin: 0;
-  }
-  #dark-mode-toggle:hover {
-    cursor: pointer;
-  }
-}
+
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
@@ -239,28 +177,28 @@
   }
   #cs-navigation {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: var(--bodyTextColorWhite);
+    box-shadow: 0px 8px 24px 0px rgba(22, 22, 19, 0.08);
     position: fixed;
     z-index: 10000;
   }
   #cs-navigation:before {
-    content: '';
+    content: "";
     width: 100%;
     height: 0vh;
-    background: rgba(0, 0, 0, 0.6);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: rgba(22, 22, 19, 0.6);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     position: absolute;
     display: block;
     top: 100%;
     right: 0;
     z-index: -1100;
     opacity: 0;
-    transition: height .5s, opacity .5s;
+    transition: height 0.5s, opacity 0.5s;
   }
   #cs-navigation.cs-active:before {
     height: 150vh;
@@ -269,7 +207,7 @@
   #cs-navigation.cs-active .cs-ul-wrapper {
     opacity: 1;
     transform: scaleY(1);
-    transition-delay: .15s;
+    transition-delay: 0.15s;
   }
   #cs-navigation.cs-active .cs-li {
     transform: translateY(0);
@@ -282,12 +220,9 @@
     align-items: center;
   }
   #cs-navigation .cs-logo {
-    width: 40%;
-    max-width: 9.125rem;
-    height: 100%;
+    max-width: 5rem;
     margin: 0 auto 0 0;
     padding: 0;
-    /* prevents padding from affecting height and width */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -336,7 +271,7 @@
     width: 100%;
     height: 2px;
     border-radius: 2px;
-    background-color: #1a1a1a;
+    background-color: var(--headerColor);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -344,8 +279,8 @@
   #cs-navigation .cs-line1 {
     top: 0;
     transform-origin: center;
-    transition: transform .5s, top .3S, left .3S;
-    animation-duration: .7s;
+    transition: transform 0.5s, top 0.3s, left 0.3s;
+    animation-duration: 0.7s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     animation-direction: normal;
@@ -353,23 +288,23 @@
   #cs-navigation .cs-line2 {
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
-    transition: top .3s, left .3s, transform .5s;
-    animation-duration: .7s;
+    transition: top 0.3s, left 0.3s, transform 0.5s;
+    animation-duration: 0.7s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
     animation-direction: normal;
   }
   #cs-navigation .cs-line3 {
     bottom: 0;
-    transition: bottom .3s, opacity .3s;
+    transition: bottom 0.3s, opacity 0.3s;
   }
   #cs-navigation .cs-ul-wrapper {
     width: 100%;
     height: auto;
     padding-bottom: 2.4em;
     opacity: 0;
-    background-color: #fff;
-    box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    background-color: var(--backgroundColor);
+    box-shadow: inset 0px 8px 24px 0px rgba(22, 22, 19, 0.08);
     overflow: hidden;
     position: absolute;
     top: 100%;
@@ -377,11 +312,11 @@
     z-index: -1;
     transform: scaleY(0);
     transform-origin: top;
-    transition: transform .4s, opacity .3s;
+    transition: transform 0.4s, opacity 0.3s;
   }
   #cs-navigation .cs-ul {
     margin: 0;
-    padding: 3rem 0 0 0;
+    padding: 3rem 2rem;
     width: 100%;
     height: auto;
     max-height: 65vh;
@@ -394,56 +329,57 @@
   }
   #cs-navigation .cs-li {
     width: 100%;
-    text-align: center;
+    text-align: right;
     list-style: none;
     margin-right: 0;
     /* transition from these values */
     transform: translateY(-4.375rem);
     opacity: 0;
-    transition: transform .6s, opacity .9s;
+    transition: transform 0.6s, opacity 0.9s;
   }
   #cs-navigation .cs-li:nth-of-type(1) {
-    transition-delay: .05s;
+    transition-delay: 0.05s;
   }
   #cs-navigation .cs-li:nth-of-type(2) {
-    transition-delay: .1s;
+    transition-delay: 0.1s;
   }
   #cs-navigation .cs-li:nth-of-type(3) {
-    transition-delay: .15s;
+    transition-delay: 0.15s;
   }
   #cs-navigation .cs-li:nth-of-type(4) {
-    transition-delay: .2s;
+    transition-delay: 0.2s;
   }
   #cs-navigation .cs-li:nth-of-type(5) {
-    transition-delay: .25s;
+    transition-delay: 0.25s;
   }
   #cs-navigation .cs-li:nth-of-type(6) {
-    transition-delay: .3s;
+    transition-delay: 0.3s;
   }
   #cs-navigation .cs-li:nth-of-type(7) {
-    transition-delay: .35s;
+    transition-delay: 0.35s;
   }
   #cs-navigation .cs-li:nth-of-type(8) {
-    transition-delay: .4s;
+    transition-delay: 0.4s;
   }
   #cs-navigation .cs-li:nth-of-type(9) {
-    transition-delay: .45s;
+    transition-delay: 0.45s;
   }
   #cs-navigation .cs-li:nth-of-type(10) {
-    transition-delay: .5s;
+    transition-delay: 0.5s;
   }
   #cs-navigation .cs-li:nth-of-type(11) {
-    transition-delay: .55s;
+    transition-delay: 0.55s;
   }
   #cs-navigation .cs-li:nth-of-type(12) {
-    transition-delay: .6s;
+    transition-delay: 0.6s;
   }
   #cs-navigation .cs-li:nth-of-type(13) {
-    transition-delay: .65s;
+    transition-delay: 0.65s;
   }
   #cs-navigation .cs-li-link {
     /* 16px - 24px */
     font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 500;
     line-height: 1.2em;
     text-decoration: none;
     margin: 0;
@@ -453,10 +389,10 @@
   }
   #cs-navigation .cs-li-link:before {
     /* active state underline */
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
-    background: var(--secondary);
+    background: var(--headerColor);
     opacity: 1;
     position: absolute;
     display: none;
@@ -470,25 +406,7 @@
     display: none;
   }
 }
-/* Dark Mode */
-@media only screen and (max-width: 63.9375rem) {
-  body.dark-mode #cs-navigation {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-logo {
-    /* makes it white */
-    filter: grayscale(1) brightness(1000%);
-  }
-  body.dark-mode #cs-navigation .cs-line {
-    background-color: #fff;
-  }
-  body.dark-mode #cs-navigation .cs-ul-wrapper {
-    background-color: var(--medium);
-  }
-  body.dark-mode #cs-navigation .cs-li-link {
-    color: var(--bodyTextColorWhite);
-  }
-}
+
 /*-- -------------------------- -->
 <---     Desktop Navigation     -->
 <--- -------------------------- -*/
@@ -496,17 +414,16 @@
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     width: 100%;
-    padding: 0 1rem;
+    padding: 1rem;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    background-color: var(--bodyTextColorWhite);
+    box-shadow: 0px 8px 24px 0px rgba(22, 22, 19, 0.08);
     position: fixed;
     z-index: 10000;
   }
   #cs-navigation .cs-container {
     width: 100%;
-    max-width: 80rem;
     margin: auto;
     display: flex;
     justify-content: flex-end;
@@ -517,10 +434,7 @@
     display: none;
   }
   #cs-navigation .cs-logo {
-    width: 18.4%;
-    max-width: 21.875rem;
-    height: 4.0625rem;
-    /* margin-right auto pushes everything away from it to the right */
+    max-width: 6rem;
     margin: 0 auto 0 0;
     padding: 0;
     display: flex;
@@ -553,12 +467,16 @@
   #cs-navigation .cs-li-link {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 500;
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
     color: var(--bodyTextColor);
     display: block;
     position: relative;
+  }
+  #cs-navigation .cs-li-hidden {
+    display: none;
   }
   #cs-navigation .cs-li-link:hover:before {
     width: 100%;
@@ -568,34 +486,19 @@
   }
   #cs-navigation .cs-li-link:before {
     /* active state underline */
-    content: '';
+    content: "";
     width: 0%;
     height: 2px;
     background: var(--primary);
     opacity: 1;
     position: absolute;
     display: block;
-    bottom: 0rem;
+    bottom: -0.25rem;
     left: 0;
-    transition: width .3s;
+    transition: width 0.3s;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-  body.dark-mode #cs-navigation {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-logo {
-    /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
-  }
-  body.dark-mode #cs-navigation .cs-li-link {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-li-link:before {
-    background-color: var(--secondary);
-  }
-}
+
 /*-- -------------------------- -->
 <---          Banner            -->
 <--- -------------------------- -*/
@@ -639,13 +542,13 @@
   }
   #banner-712 .cs-background:before {
     /* background color overlay */
-    content: '';
+    content: "";
     position: absolute;
     display: block;
     height: 100%;
     width: 100%;
     background: #000;
-    opacity: .75;
+    opacity: 0.75;
     top: 0;
     left: 0;
     z-index: 1;
@@ -664,7 +567,11 @@
 @media only screen and (min-width: 48rem) {
   #banner-712 .cs-background:before {
     opacity: 1;
-    background: linear-gradient(90.01deg, rgba(0, 0, 0, 0.9) 16.86%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(
+      90.01deg,
+      rgba(0, 0, 0, 0.9) 16.86%,
+      rgba(0, 0, 0, 0) 100%
+    );
   }
 }
 /*-- -------------------------- -->
@@ -748,7 +655,7 @@
   }
   #cs-footer-269 .cs-nav-link:before {
     /* underline */
-    content: '';
+    content: "";
     width: 0%;
     height: 0.125rem;
     /* current color of the parent */
@@ -758,7 +665,7 @@
     display: block;
     bottom: -0.125rem;
     left: 0;
-    transition: width .3s;
+    transition: width 0.3s;
   }
   #cs-footer-269 .cs-nav-link:hover:before {
     width: 100%;
@@ -806,7 +713,7 @@
   #cs-footer-269 .cs-social-link {
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #4E4B66;
+    background-color: #4e4b66;
     border-radius: 50%;
     display: flex;
     justify-content: center;
