@@ -10,6 +10,7 @@
     --bodyTextColor: #37372f;
     --bodyTextColorWhite: #fefefe;
     --backgroundColor: #fbfbef;
+    --lightGrey: #e1e1e0;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -105,9 +106,9 @@
     text-transform: uppercase;
     text-align: inherit;
     letter-spacing: 0.1em;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--bodyTextColor);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     display: block;
   }
   .cs-title {
