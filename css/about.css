@@ -301,11 +301,6 @@
     transition: color 0.3s, opacity 0.3s;
   }
 
-  #services-1302 .cs-text {
-    border-left: 4px solid var(--primary);
-    padding-left: 1rem;
-  }
-
   #services-1302 .services-card-link {
     color: var(--headerColor);
     font-size: var(--bodyFontSize);
