@@ -56,7 +56,6 @@
   #contact-1271 .cs-text {
     color: var(--bodyTextColorWhite);
     font-size: clamp(1rem, 0.9022rem + 0.4348vw, 1.25rem);
-    text-wrap: pretty;
     margin: 0;
   }
   #contact-1271 .cs-h3 {

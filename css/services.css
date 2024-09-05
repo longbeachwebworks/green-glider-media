@@ -33,24 +33,25 @@
     align-items: center;
     flex-direction: column;
   }
+
+  #hero-288 .cs-topper {
+    margin-top: 2rem;
+  }
+
   #hero-288 .cs-title {
     font-size: clamp(1.75rem, 1.2609rem + 2.1739vw, 3rem);
     font-weight: 900;
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: center;
-    text-wrap: pretty;
     max-width: 43.75rem;
-    margin-block: 1rem;
     color: var(--headerColor);
     position: relative;
   }
   #hero-288 .cs-text {
-    /* 16px - 20px */
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     line-height: 1.6em;
     text-align: center;
-    text-wrap: pretty;
     width: 100%;
     margin: 0 auto;
     margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
@@ -132,6 +133,10 @@
     height: 100%;
     width: 100%;
   }
+
+  #hero-288 .cs-topper {
+    margin-top: 0;
+  }
 }
 
 /*-- -------------------------- -->
@@ -141,7 +146,6 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #services-1302 {
-    background-color: var(--bodyTextColorWhite);
     padding: var(--sectionPadding);
     position: relative;
     z-index: 10;
@@ -159,15 +163,19 @@
   }
   #services-1302 .cs-content {
     /* set text align to left if content needs to be left aligned */
-    text-align: center;
+    text-align: left;
     width: 100%;
     display: flex;
     flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: start;
   }
-
+  #services-1302 .cs-topper {
+  }
   #services-1302 .cs-title {
     font-size: clamp(1.5rem, 1.1667rem + 1.6667vw, 2.5rem);
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
   #services-1302 .cs-card-group {
     width: 100%;
@@ -225,7 +233,6 @@
   #services-1302 .cs-item-text {
     font-size: var(--bodyFontSize);
     text-align: inherit;
-    text-wrap: balance;
     line-height: 1.5em;
     margin: 0 0 1rem 0;
     color: var(--bodyTextColor);
@@ -249,6 +256,8 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #services-1302 .cs-content {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     gap: 3rem;
   }
@@ -284,7 +293,6 @@
   #services-1302 .cs-item:hover .cs-item-text,
   #services-1302 .cs-item:hover .services-card-link {
     color: var(--bodyTextColorWhite);
-    text-wrap: balance;
   }
   #services-1302 .cs-item:hover .cs-item-text {
     color: var(--lightGrey);
@@ -337,8 +345,9 @@
   }
   #logos-1896 .cs-logo {
     height: 100%;
+    width: auto;
     max-width: 100%;
-    max-height: 4rem;
+    max-height: 3rem;
     margin: 0;
     display: block;
   }
@@ -446,7 +455,6 @@
     margin-bottom: 1.5rem;
   }
   #reviews-1396 .cs-text {
-    text-wrap: balance;
     margin-bottom: 2rem;
   }
   #reviews-1396 .cs-flex-group {
@@ -563,7 +571,6 @@
   #contact-1271 .cs-text {
     color: var(--bodyTextColorWhite);
     font-size: clamp(1rem, 0.9022rem + 0.4348vw, 1.25rem);
-    text-wrap: pretty;
     margin: 0;
   }
   #contact-1271 .cs-h3 {

@@ -82,12 +82,15 @@
   h4,
   h5,
   h6 {
+    text-wrap: balance;
     margin: 0;
     color: var(--headerColor);
   }
   p,
   li,
   a {
+    text-wrap: pretty;
+    max-width: 65ch;
     font-size: 1rem;
     line-height: 1.5em;
     margin: 0;

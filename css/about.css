@@ -33,24 +33,25 @@
     align-items: center;
     flex-direction: column;
   }
+
+  #hero-288 .cs-topper {
+    margin-top: 2rem;
+  }
+
   #hero-288 .cs-title {
     font-size: clamp(1.75rem, 1.2609rem + 2.1739vw, 3rem);
     font-weight: 900;
     line-height: 1.2em;
     text-transform: uppercase;
     text-align: center;
-    text-wrap: pretty;
     max-width: 43.75rem;
-    margin-block: 1rem;
     color: var(--headerColor);
     position: relative;
   }
   #hero-288 .cs-text {
-    /* 16px - 20px */
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     line-height: 1.6em;
     text-align: center;
-    text-wrap: pretty;
     width: 100%;
     margin: 0 auto;
     margin-bottom: clamp(1.75rem, 3.92vw, 2.5rem);
@@ -132,6 +133,10 @@
     height: 100%;
     width: 100%;
   }
+
+  #hero-288 .cs-topper {
+    margin-top: 0;
+  }
 }
 
 /*-- -------------------------- -->
@@ -171,6 +176,7 @@
   #content-1638 .cs-title {
     font-size: clamp(1.5rem, 1.1667rem + 1.6667vw, 2.5rem);
     text-transform: uppercase;
+    margin-bottom: 2rem;
   }
   #content-1638 .cs-text {
     border-left: 4px solid var(--primary);
@@ -196,324 +202,9 @@
     width: 50%;
     text-align: left;
     max-width: 38rem;
-    margin-block: auto;
   }
   #content-1638 .cs-title {
     margin: 0;
-  }
-}
-
-/*-- -------------------------- -->
-<---          Services          -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #services-1302 {
-    background-color: var(--backgroundColor);
-    padding: var(--sectionPadding);
-    position: relative;
-    z-index: 10;
-  }
-  #services-1302 .cs-container {
-    width: 100%;
-    max-width: 80rem;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #services-1302 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  #services-1302 .cs-title {
-    font-size: clamp(1.5rem, 1.1667rem + 1.6667vw, 2.5rem);
-    text-transform: uppercase;
-  }
-  #services-1302 .cs-card-group {
-    width: 100%;
-    max-width: 80rem;
-    margin: 0;
-    padding: 0 1rem;
-    /* prevents padding and border from affecting height and width */
-    background-color: var(--bodyTextColorWhite);
-    box-shadow: 0px 8px 24px 0px rgba(22, 22, 19, 0.08);
-    box-sizing: border-box;
-    border-radius: 1rem;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    position: relative;
-    z-index: 15;
-  }
-  #services-1302 .cs-item {
-    display: flex;
-    text-align: left;
-    list-style: none;
-    width: 100%;
-    border-bottom: 1px solid var(--lightGrey);
-    box-sizing: border-box;
-    grid-column: span 12;
-    transition: background-color 0.3s, border-color 0.3s;
-  }
-  #services-1302 .cs-item:last-of-type {
-    border-bottom: none;
-  }
-  #services-1302 .cs-link {
-    text-decoration: none;
-    /* 24px - 60px top & Bottom */
-    /* 24px - 16px top & Bottom */
-    padding: clamp(1.5rem, 5.3vw, 3.75rem) clamp(1rem, 2.7vw, 2.5rem);
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-  }
-  #services-1302 .cs-icon {
-    /* 32px - 40px */
-    height: clamp(2rem, 4vw, 2.5rem);
-    width: auto;
-    margin: 0 0 1rem 0;
-  }
-  #services-1302 .cs-h3 {
-    font-size: 1.25rem;
-    font-weight: 800;
-    text-align: inherit;
-    line-height: 1.2em;
-    margin: 0 0 0.75rem 0;
-    color: var(--headerColor);
-    transition: color 0.3s;
-  }
-  #services-1302 .cs-item-text {
-    font-size: var(--bodyFontSize);
-    text-align: inherit;
-    text-wrap: balance;
-    line-height: 1.5em;
-    margin: 0 0 1rem 0;
-    color: var(--bodyTextColor);
-    transition: color 0.3s, opacity 0.3s;
-  }
-
-  #services-1302 .services-card-link {
-    color: var(--headerColor);
-    font-size: var(--bodyFontSize);
-    font-weight: 700;
-    text-transform: capitalize;
-    transition: color 0.3s;
-    margin-top: auto;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #services-1302 .cs-content {
-    align-items: center;
-    gap: 3rem;
-  }
-  #services-1302 .cs-title {
-    margin: 0;
-  }
-  #services-1302 .cs-flex-group {
-    width: 50%;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #services-1302 .cs-item {
-    grid-column: span 4;
-    border-bottom: none;
-    border-right: 1px solid var(--lightGrey);
-  }
-  #services-1302 .cs-item:nth-of-type(3) {
-    border-bottom: none;
-    border-right: none;
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #services-1302 .cs-card-group {
-    padding: 0;
-  }
-
-  #services-1302 .cs-item:hover {
-    background-color: var(--secondary);
-    border-color: var(--secondary);
-  }
-  #services-1302 .cs-item:hover .cs-h3,
-  #services-1302 .cs-item:hover .cs-item-text,
-  #services-1302 .cs-item:hover .services-card-link {
-    color: var(--bodyTextColorWhite);
-    text-wrap: balance;
-  }
-  #services-1302 .cs-item:hover .cs-item-text {
-    color: var(--lightGrey);
-  }
-  #services-1302 .cs-item:first-of-type {
-    border-radius: 1rem 0 0 1rem;
-  }
-  #services-1302 .cs-item:last-of-type {
-    border-radius: 0 1rem 1rem 0;
-    border: none;
-  }
-}
-
-/*-- -------------------------- -->
-<---          Testimonials      -->
-<--- -------------------------- -*/
-
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #reviews-1396 {
-    /* centers the button */
-    text-align: center;
-    padding: var(--sectionPadding);
-    /* clips the orbs from causing overflow issues */
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-  }
-  #reviews-1396 .cs-container {
-    width: 100%;
-    /* changes to 1024px at tablet */
-    max-width: 36.5rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #reviews-1396 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-
-  #reviews-1396 .cs-title {
-    font-size: clamp(1.5rem, 1.1667rem + 1.6667vw, 2.5rem);
-    text-transform: uppercase;
-    margin: 0;
-  }
-  #reviews-1396 .cs-card-group {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    /* 16px - 20px */
-    gap: clamp(1rem, 2.5vw, 1.15rem);
-  }
-  #reviews-1396 .cs-item {
-    list-style: none;
-    text-align: left;
-    padding: clamp(1rem, 4vw, 3.75rem);
-    background-color: var(--backgroundColor);
-    border-radius: 1rem;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    grid-column: span 12;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    position: relative;
-    z-index: 1;
-  }
-  #reviews-1396 .cs-item:before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: var(--primary);
-    opacity: 0.05;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    /* prevents the mouse from interacting it */
-    pointer-events: none;
-  }
-  #reviews-1396 .cs-quote {
-    height: 3rem;
-    width: auto;
-    margin-bottom: 1.25rem;
-    display: block;
-  }
-  #reviews-1396 .cs-item-text {
-    color: var(--headerColor);
-    font-size: clamp(1.25rem, 1.1667rem + 0.4167vw, 1.5rem);
-    text-transform: capitalize;
-    line-height: 1.6em;
-    font-weight: 800;
-    margin-bottom: 1.5rem;
-  }
-  #reviews-1396 .cs-text {
-    text-wrap: balance;
-    margin-bottom: 2rem;
-  }
-  #reviews-1396 .cs-flex-group {
-    /* in case one card has more text than the other, this pushes up against the review text so the name and title are always at the bottom. Only works if parent is a flexbox */
-    margin-top: auto;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    /* 8px - 24px */
-    gap: 1rem;
-  }
-  #reviews-1396 .cs-profile {
-    /* 40px - 52px */
-    width: clamp(2.5rem, 5vw, 3.25rem);
-    height: clamp(2.5rem, 5vw, 3.25rem);
-    margin: 0;
-    border-radius: 50%;
-    box-sizing: border-box;
-    /* clips image corners to make circle */
-    overflow: hidden;
-    position: relative;
-    display: block;
-  }
-  #reviews-1396 .cs-profile img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    /* makes the image behave like a background image */
-    object-fit: cover;
-  }
-  #reviews-1396 .cs-name {
-    font-size: 1rem;
-    line-height: 1.2em;
-    font-weight: 800;
-    margin: 0;
-    color: var(--headerColor);
-    display: block;
-  }
-  #reviews-1396 .cs-job {
-    font-size: 1rem;
-    line-height: 1.5em;
-    font-weight: 400;
-    margin: 0;
-    color: var(--bodyTextColor);
-    display: block;
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48rem) {
-  #reviews-1396 .cs-container {
-    max-width: 80rem;
-  }
-  #reviews-1396 .cs-item {
-    grid-column: span 4;
   }
 }
 
@@ -574,7 +265,6 @@
   #contact-1271 .cs-text {
     color: var(--bodyTextColorWhite);
     font-size: clamp(1rem, 0.9022rem + 0.4348vw, 1.25rem);
-    text-wrap: pretty;
     margin: 0;
   }
   #contact-1271 .cs-h3 {
