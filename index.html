@@ -164,16 +164,18 @@
           </div>
           <!--Hero Image-->
           <picture class="cs-picture">
-            <source
-              media="(min-width: 0px)"
-              srcset="assets/img/webp/ggm-hero-rocket.webp" />
             <img
               aria-hidden="true"
               decoding="async"
+              srcset="
+                assets/img/webp/ggm-hero-rocket-m-512.webp,
+                assets/img/webp/ggm-hero-rocket-t-768.webp  1.5x,
+                assets/img/webp/ggm-hero-rocket-d-1024.webp 2x
+              "
               src="assets/img/webp/ggm-hero-rocket.webp"
               alt="Illustrated graphic of a rocket ship inside a computer screen."
-              width="512"
-              height="512" />
+              width="1024"
+              height="1024" />
           </picture>
           <!--Background Topographic Map-->
           <picture class="cs-waves">
@@ -370,6 +372,7 @@
             <li class="cs-item">
               <!-- Quote icon -->
               <img
+                loading="lazy"
                 class="cs-quote"
                 aria-hidden="true"
                 src="/assets/img/svg/quote-icon.svg"
@@ -386,6 +389,7 @@
               <div class="cs-flex-group">
                 <picture class="cs-picture">
                   <img
+                    loading="lazy"
                     class="cs-profile"
                     src="/assets/img/webp/ggm-cs-profile.webp"
                     decoding="async"
@@ -403,6 +407,7 @@
             <li class="cs-item">
               <!-- Quote icon -->
               <img
+                loading="lazy"
                 class="cs-quote"
                 aria-hidden="true"
                 src="/assets/img/svg/quote-icon.svg"
@@ -419,6 +424,7 @@
               <div class="cs-flex-group">
                 <picture class="cs-picture">
                   <img
+                    loading="lazy"
                     class="cs-profile"
                     src="/assets/img/webp/ggm-lc-profile.webp"
                     decoding="async"
@@ -435,6 +441,7 @@
             <li class="cs-item">
               <!-- Quote icon -->
               <img
+                loading="lazy"
                 class="cs-quote"
                 aria-hidden="true"
                 src="/assets/img/svg/quote-icon.svg"
@@ -451,6 +458,7 @@
               <div class="cs-flex-group">
                 <picture class="cs-picture">
                   <img
+                    loading="lazy"
                     class="cs-profile"
                     src="/assets/img/webp/ggm-lw-profile.webp"
                     decoding="async"
@@ -593,6 +601,7 @@
                 target="_blank"
                 rel="noopener">
                 <img
+                  loading="lazy"
                   class="cs-social-icon cs-default"
                   src="assets/img/svg/linkedin-icon.svg"
                   alt="icon"
