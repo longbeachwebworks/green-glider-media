@@ -570,42 +570,6 @@
     height: auto;
     display: block;
   }
-  #footer-1391 .cs-bottom {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-  }
-  #footer-1391 .cs-social {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  #footer-1391 .cs-social-li {
-    list-style: none;
-  }
-  #footer-1391 .cs-social-link {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #footer-1391 .cs-social-icon {
-    height: auto;
-    display: block;
-    transition: transform 300ms;
-  }
-  #footer-1391 .cs-social-icon:hover {
-    transform: scale(0.95);
-  }
 
   #footer-1391 .cs-copyright {
     font-size: 1rem;
@@ -621,13 +585,17 @@
     color: var(--bodyTextColor);
   }
 
-  #footer-1391 .certificates-label {
-    text-align: center;
-    font-weight: 600;
+  #footer-1391 .footer-flex {
     margin-bottom: 1rem;
   }
 
-  #footer-1391 .certificate-images {
+  #footer-1391 .footer-flex-label {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  #footer-1391 .footer-flex-images {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -650,10 +618,10 @@
     /* sends it to the right in the 3rd position */
     order: 3;
   }
-  #footer-1391 .certificates-label {
+  #footer-1391 .footer-flex-label {
     text-align: left;
   }
-  #footer-1391 .certificate-images {
+  #footer-1391 .footer-flex-images {
     flex-direction: row;
   }
 }
