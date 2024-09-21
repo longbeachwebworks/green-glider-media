@@ -189,21 +189,24 @@
           </picture>
           <!--Background Topographic Map-->
           <picture class="cs-waves">
+            <!-- Desktop -->
             <source
               media="(min-width: 1024px)"
               srcset="assets/img/svg/topographic-swirls-desktop.svg" />
+            <!-- Tablet -->
             <source
               media="(min-width: 601px)"
               srcset="assets/img/svg/topographic-swirls-tablet.svg" />
+            <!-- Mobile -->
             <source
               media="(max-width: 600px)"
               srcset="assets/img/svg/topographic-swirls-mobile.svg" />
             <img
               decoding="async"
-              src="assets/img/svg/topographic-swirls-desktop.svg"
-              alt="waves"
-              width="1920"
-              height="768"
+              src="assets/img/svg/topographic-swirls-mobile.svg"
+              alt="topographic map illustration"
+              width="600"
+              height="980"
               aria-hidden="true" />
           </picture>
         </div>
@@ -555,21 +558,25 @@
           </div>
         </div>
         <picture class="cs-background">
-          <!--Mobile Image-->
+          <!-- Desktop -->
+          <source
+            media="(min-width: 1024px)"
+            srcset="assets/img/svg/topographic-swirls-desktop.svg" />
+          <!-- Tablet -->
+          <source
+            media="(min-width: 601px)"
+            srcset="assets/img/svg/topographic-swirls-tablet.svg" />
+          <!-- Mobile -->
           <source
             media="(max-width: 600px)"
             srcset="assets/img/svg/topographic-swirls-mobile.svg" />
-          <!--Tablet and above Image-->
-          <source
-            media="(min-width: 601px)"
-            srcset="assets/img/svg/topographic-swirls-desktop.svg" />
           <img
-            loading="lazy"
             decoding="async"
-            src="assets/img/svg/topographic-swirls-desktop.svg"
-            alt="waves"
-            width="1920"
-            height="768" />
+            src="assets/img/svg/topographic-swirls-mobile.svg"
+            alt="topographic map illustration"
+            width="600"
+            height="980"
+            aria-hidden="true" />
         </picture>
       </section>
     </main>
