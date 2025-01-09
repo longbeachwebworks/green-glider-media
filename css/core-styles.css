@@ -625,3 +625,8 @@
     flex-direction: row;
   }
 }
+
+/* Netlify Honeypot */
+.hidden {
+  display: none;
+}
