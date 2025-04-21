@@ -630,3 +630,11 @@
 .hidden {
   display: none;
 }
+
+/* PDF Download link */
+.cspdf-link {
+  display: flex;
+  gap: 0.25rem;
+  text-decoration: none;
+  color: #161613;
+}
